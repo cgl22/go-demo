@@ -38,10 +38,20 @@ func main() {
 
 	// foreach
 	numbers := []int32{1, 5, 1, 8}
-	for i, j := range numbers {
-		fmt.Printf("index为%d，值为%d\n", i, j)
+	for i, number := range numbers {
+		fmt.Printf("index为%d，值为%d\n", i, number)
 	}
 	for j := range numbers {
 		fmt.Printf("值为%d\n", j)
+	}
+
+first:
+	for i := 1; i < 10; i++ {
+		for j := 1; j <= i; j++ {
+			fmt.Printf("%d*%d=%d\n", i, j, i*j)
+			//break first
+			//goto first
+			continue first
+		}
 	}
 }
