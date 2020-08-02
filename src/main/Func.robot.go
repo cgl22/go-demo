@@ -34,6 +34,31 @@ func main() {
 	fmt.Println(sum(1, 2, 3))
 	nums := []int{1, 2, 3, 4}
 	fmt.Println(sum(nums...))
+
+	// 闭包
+	nextInt := intSeq()
+	fmt.Println(nextInt())
+	fmt.Println(nextInt())
+	nextInt2 := intSeq()
+	fmt.Println(nextInt2())
+
+	// 递归
+	fmt.Println(recursion(5))
+}
+
+func recursion(i int) int {
+	if i == 1 {
+		return 1
+	}
+	return i + recursion(i-1)
+}
+
+func intSeq() func() int {
+	i := 0
+	return func() int {
+		i += 1
+		return i
+	}
 }
 
 func sum(nums ...int) int {
