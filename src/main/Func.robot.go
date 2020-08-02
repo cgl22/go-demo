@@ -29,6 +29,19 @@ func main() {
 		fmt.Printf("我是回调，x：%d\n", x)
 		return x
 	})
+
+	// 可变参数
+	fmt.Println(sum(1, 2, 3))
+	nums := []int{1, 2, 3, 4}
+	fmt.Println(sum(nums...))
+}
+
+func sum(nums ...int) int {
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+	return sum
 }
 
 func testCallBack(x int, f cb) {

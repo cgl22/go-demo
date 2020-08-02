@@ -14,7 +14,8 @@ func main() {
 	// switch
 	var score int = 80
 	switch score {
-	case 60:
+	case 60, 65:
+		// 多个条件以逗号分隔
 		fmt.Println("及格")
 	case 70:
 		fmt.Println("一般")
